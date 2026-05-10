@@ -6,7 +6,7 @@ This is the official implementation of the paper: "A Pretrained Behavior-Embedde
 
 ## 🏗️ Framework Architecture
 
-![Framework Architecture](Figure 1.png)
+![Framework Architecture](Figure_1.png)
 
 ## 📢 Announcement on Code Availability
 
