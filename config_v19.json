@@ -1,0 +1,129 @@
+{
+  "dataset": "SCAT",
+  "model": "GCVR",
+  "learning_rate": 0.001,
+  "epochs": 200,
+
+
+  "features": ["lat", "lon", "measured_flight_level", "vx", "vy", "rocd"],
+  "inp_seq_len": 36,
+  "horizon": 36,
+  "data_period": 2,
+  "step_size": 5,
+  "num_classes": 6,
+
+  "num_workers": 4,
+  "batch_size": 1024,
+  "load_from_pt": true,
+  "train_tensor_path": "/home/userdata/2024_hyn/dataset/SCAT/Train.pt",
+  "test_tensor_path": "/home/userdata/2024_hyn/dataset/SCAT/Test.pt",
+
+
+  "lat": {
+    "bits": 16,
+    "delta_bits": 10,
+    "scale": 1000,
+    "min": 55,
+    "max": 70,
+    "delta_lo": -200,
+    "delta_hi": 200
+  },
+
+  "lon": {
+    "bits": 16,
+    "delta_bits": 10,
+    "scale": 1000,
+    "min": 10,
+    "max": 25,
+    "delta_lo": -400,
+    "delta_hi": 400
+  },
+
+  "measured_flight_level": {
+    "bits": 15,
+    "delta_bits": 12,
+    "scale": 1,
+    "min": -100,
+    "max": 14000,
+    "delta_lo": -1500,
+    "delta_hi": 1500
+  },
+
+  "vx": {
+    "bits": 10,
+    "delta_bits": 10,
+    "scale": 10,
+    "min": -400,
+    "max": 400,
+    "delta_lo": -320,
+    "delta_hi": 320
+  },
+
+  "vy": {
+    "bits": 10,
+    "delta_bits": 10,
+    "scale": 1,
+    "min": -400,
+    "max": 400,
+    "delta_lo": -320,
+    "delta_hi": 320
+  },
+
+  "rocd": {
+    "bits": 8,
+    "delta_bits": 8,
+    "scale": 10,
+    "min": -125,
+    "max": 60,
+    "delta_lo": -100,
+    "delta_hi": 100
+  },
+
+
+
+
+
+  "d_model": 768,
+  "d_vae": 768,
+  "nhead": 8,
+  "dim_feedforward": 2048,
+  "dropout": 0.2,
+  "max_len": 512,
+  "c_in": 68,
+  "bias": true,
+  "eps": 0.001,
+  "n_lstm_layers": 2,
+  "n_en_layer": 2,
+  "cls_n_en_layer": 2,
+  "num_layers": 4,
+  "n_de_layer": 4,
+  "add_decoder": true,
+  "n_head": 8,
+  "d_z": 64,
+  "d_cond": 32,
+  "dropout_p": 0.1,
+  "learn_logvar": true,
+  "clamp_logvar": 20.0,
+  "classifier_path": "/home/userdata/2024_hyn/project/python/FlightGPT/check_points/2025-09-01_23-31/cls.pt",
+  "vae_path": "/home/userdata/2024_hyn/project/python/FlightGPT/check_points/2025-10-23-16-07/vae_prior_best.pt",
+  "vae_train_mode": "reinit_all",
+  "use_vae_refine": true,
+
+
+  "w_mix_mode": "schedule",
+  "w_alpha": 0.3,
+  "alpha_max": 1.0,
+  "alpha_mode": "linear",
+  "w_tau": 0.7,
+  "beta_max": 3.0,
+
+  "is_training": true,
+  "debug": false,
+  "model_path": "/home/userdata/2024_hyn/project/python/FlightGPT/check_points/2025-11-10_15-27/epoch_9.pt",
+  "save_dir": "./check_points/",
+
+  "resume_model_path": "/home/userdata/2024_hyn/project/python/FlightGPT/check_points/2025-11-10_15-27/epoch_9.pt",
+  "resume_training": true,
+  "lr_reset": true
+
+}

@@ -1,0 +1,85 @@
+{
+  "model": "Mamba on SCAT",
+  "learning_rate": 0.0001,
+  "epochs": 200,
+
+  "inp_seq_len": 32,
+  "horizon": 16,
+  "prec": 7,
+  "length_common_prefix": 1,
+  "common_prefix": "u",
+  "data_period": 2,
+  "step_size": 5,
+  "stride": 4,
+  "mode": "dual",
+
+  "batch_size": 1024,
+  "train_data": "/home/userdata/2024_hyn/dataset/SCAT/Train",
+  "dev_data": "/home/userdata/2024_hyn/dataset/SCAT/Valid",
+  "test_data": "/home/userdata/2024_hyn/dataset/SCAT/Test",
+  "try_data": "/home/userdata/2024_hyn/dataset/SCAT/try",
+  "save_data_path": "/home/userdata/2024_hyn/project/python/FlightGPT/data/",
+  "load_from_pt": false,
+  "train_tensor_path": "/home/userdata/2024_hyn/project/python/FlightGPT/data/train.pt",
+  "test_tensor_path": "/home/userdata/2024_hyn/project/python/FlightGPT/data/test.pt",
+
+
+  "lon_size": 16,
+  "lat_size": 16,
+  "alt_size": 14,
+  "spdx_size": 10,
+  "spdy_size": 10,
+  "spdz_size": 8,
+
+  "lon_min": 10,
+  "lon_max": 25,
+  "lat_min": 54,
+  "lat_max": 70,
+  "alt_min": -100,
+  "alt_max": 14000,
+  "spd_min": -320,
+  "spd_max": 320,
+  "roc_min": -120,
+  "roc_max": 120,
+
+  "lon_norm": 320,
+  "lat_norm": 115,
+  "alt_norm": 600,
+  "spd_norm": 270,
+  "roc_norm": 140,
+
+
+  "geo_diff_size": 16,
+
+  "bin_size": 16,
+
+  "d_model": 768,
+  "nhead": 8,
+  "dim_feedforward": 2048,
+  "dropout": 0.2,
+  "max_len": 512,
+  "c_in": 108,
+  "bias": true,
+  "epochs": 200,
+  "eps": 0.001,
+  "n_lstm_layers": 2,
+  "n_en_layer": 4,
+  "num_layers": 4,
+  "num_cross_layers": 4,
+  "n_de_layer": 4,
+  "add_decoder": true,
+  "n_head": 8,
+  "patch_sizes": [16, 8, 4, 2],
+  "MultiScale_layers": 3,
+
+
+  "is_training": true,
+  "model_path": "/home/userdata/2024_hyn/project/python/FlightGPT/check_points/2025-03-26_10-05/epoch_199.pt",
+  "save_dir": "./check_points/",
+
+  "resume_model_path": "check_points/2025-03-17_17-21/epoch_199.pt",
+  "resume_training": false,
+  "lr_reset": true
+
+
+}

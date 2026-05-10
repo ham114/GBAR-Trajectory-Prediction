@@ -1,0 +1,172 @@
+{
+  "model": "BiLSTM",
+  "learning_rate": 0.0001,
+  "epochs": 200,
+
+
+  "features": ["E", "N", "RALT", "PTCH", "ROLL", "MH", "TRK", "GS", "ALTR", "LONG", "VRTG", "LATG"],
+  "inp_seq_len": 32,
+  "horizon": 16,
+  "prec": 7,
+  "length_common_prefix": 1,
+  "common_prefix": "u",
+  "data_period": 5,
+  "step_size": 5,
+  "num_classes": 4,
+
+
+  "batch_size": 2048,
+  "train_data": "/home/userdata/2024_hyn/dataset/SCAT/Train",
+  "dev_data": "/home/userdata/2024_hyn/dataset/SCAT/Valid",
+  "test_data": "/home/userdata/2024_hyn/dataset/SCAT/Test",
+  "try_data": "/home/userdata/2024_hyn/dataset/SCAT/try",
+  "load_from_pt": true,
+  "train_tensor_path": "/home/userdata/2024_hyn/dataset/nasa_dashlink/pred_train.pt",
+  "test_tensor_path": "/home/userdata/2024_hyn/dataset/nasa_dashlink/pred_val.pt",
+  "norm": "/home/userdata/2024_hyn/project/python/FlightGPT/data/delta_norm.pt",
+  "phases_stats": "/home/userdata/2024_hyn/project/python/FlightGPT/data/phases_stats.pt",
+
+
+
+  "E": {
+    "bits": 18,
+    "scale": 1000,
+    "min": -1612.615442,
+    "max": 1626.615875,
+    "delta_lo": -150,
+    "delta_hi": 150
+  },
+
+  "N": {
+    "bits": 18,
+    "scale": 1000,
+    "min": -1045.914430,
+    "max": 1066.611382,
+    "delta_lo": -150,
+    "delta_hi": 150
+  },
+
+  "RALT": {
+    "bits": 16,
+    "scale": 1,
+    "min": -3.75,
+    "max": 5506.0,
+    "delta_lo": -500,
+    "delta_hi": 500
+  },
+
+  "PTCH": {
+    "bits": 8,
+    "scale": 10,
+    "min": -15.334996,
+    "max": 20.589383,
+    "delta_lo": -100,
+    "delta_hi": 100
+  },
+
+  "ROLL": {
+    "bits": 10,
+    "scale": 1,
+    "min": -44.940751,
+    "max": 44.906152,
+    "delta_lo": -100,
+    "delta_hi": 100
+  },
+
+  "MH": {
+    "bits": 10,
+    "scale": 10,
+    "min": -180.003024,
+    "max": 179.995507,
+    "delta_lo": -120,
+    "delta_hi": 120
+  },
+
+  "TRK": {
+    "bits": 10,
+    "scale": 10,
+    "min": -179.999132,
+    "max": 179.995334,
+    "delta_lo": -120,
+    "delta_hi": 120
+  },
+
+  "GS": {
+    "bits": 10,
+    "scale": 1,
+    "min": -0.072538,
+    "max": 537.0085,
+    "delta_lo": -100,
+    "delta_hi": 100
+  },
+
+  "ALTR": {
+    "bits": 9,
+    "scale": 1,
+    "min": -37.428182,
+    "max": 38.032302,
+    "delta_lo": -400,
+    "delta_hi": 400
+  },
+
+  "LONG": {
+    "bits": 9,
+    "scale": 1,
+    "min": -1.083489,
+    "max": 0.345359,
+    "delta_lo": -400,
+    "delta_hi": 400
+  },
+
+  "VRTG": {
+    "bits": 8,
+    "scale": 1,
+    "min": -3.374457,
+    "max": 2.12178,
+    "delta_lo": -400,
+    "delta_hi": 400
+  },
+
+  "LATG": {
+    "bits": 9,
+    "scale": 1,
+    "min": -1.083003,
+    "max": 0.201586,
+    "delta_lo": -400,
+    "delta_hi": 400
+  },
+
+
+  "geo_diff_size": 16,
+
+  "bin_size": 16,
+
+  "d_model": 768,
+  "nhead": 8,
+  "dim_feedforward": 2048,
+  "dropout": 0.2,
+  "max_len": 512,
+  "c_in": 68,
+  "bias": true,
+  "epochs": 200,
+  "eps": 0.001,
+  "n_lstm_layers": 2,
+  "n_en_layer": 2,
+  "num_layers": 4,
+  "num_cross_layers": 4,
+  "n_de_layer": 4,
+  "add_decoder": true,
+  "n_head": 8,
+  "classifier_path": "/home/userdata/2024_hyn/project/python/FlightGPT/models/Mamba_cls.pt",
+
+
+  "is_training": true,
+  "model_path": "/home/userdata/2024_hyn/project/python/FlightGPT/check_points/2025-07-25_18-11/epoch_159.pt",
+  "save_dir": "./check_points/",
+
+  "resume_model_path": "",
+  "resume_training": false,
+  "lr_reset": true
+
+
+}
